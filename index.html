@@ -110,7 +110,7 @@ footer strong{color:var(--gold)}
   .nav-tabs{display:none}
   .nav-school{display:none}
   .nav-inner{padding:0 16px}
-  .mobile-menu-btn{display:block}
+  .mobile-menu-btn{display:block!important}
 
   /* Hero */
   .hero{padding:60px 16px 40px}
@@ -185,35 +185,22 @@ footer strong{color:var(--gold)}
 }
 
 /* Mobile nav dropdown */
-.mobile-menu-btn{display:none;background:none;border:none;color:var(--cream);font-size:24px;cursor:pointer;padding:8px}
+.mobile-menu-btn{display:none;background:none;border:none;color:var(--cream);font-size:24px;cursor:pointer;padding:8px;min-width:44px;min-height:44px;touch-action:manipulation;-webkit-tap-highlight-color:rgba(197,165,90,0.2)}
 .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;background:var(--dark);z-index:999;padding:8px 0;border-bottom:1px solid rgba(197,165,90,.2);max-height:calc(100vh - 64px);overflow-y:auto}
 .mobile-nav.open{display:block}
-.mobile-nav-item{display:block;padding:14px 24px;color:var(--gray);font-weight:600;font-size:14px;cursor:pointer;text-transform:uppercase;letter-spacing:.5px}
+.mobile-nav-item{display:block;padding:14px 24px;color:var(--gray);font-weight:600;font-size:14px;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;min-height:44px;touch-action:manipulation;-webkit-tap-highlight-color:rgba(197,165,90,0.2)}
 .mobile-nav-item:hover,.mobile-nav-item.active{color:var(--gold)}
 
 /* Mobile touch improvements */
 @media(max-width:768px){
-  .nav-tab,.mobile-nav-item,.tracker-tab{
+  .tracker-tab{
     -webkit-tap-highlight-color:rgba(197,165,90,0.2);
     touch-action:manipulation;
     min-height:44px;
-    display:flex;
-    align-items:center;
   }
-  .mobile-menu-btn{
-    min-width:44px;
-    min-height:44px;
-    touch-action:manipulation;
-    -webkit-tap-highlight-color:rgba(197,165,90,0.2);
-  }
-  .tracker-tab{justify-content:center}
-  /* Make PDF viewer scrollable/linkable on mobile */
   .pdf-viewer{height:50vh;min-height:300px}
-  /* Better touch scrolling for table */
   .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  /* Chart canvas touch interaction */
   #portfolio-chart{touch-action:pan-y}
-  /* Prevent double-tap zoom on buttons */
   button,a,[role="button"]{touch-action:manipulation}
 }
 </style>
